@@ -13,7 +13,7 @@ class MinesweeperGUI:
         self.buttons = [[None for _ in range(self.size)] for _ in range(self.size)]
         self.points = 0
         
-        # Load da images
+        # Load The images
         self.stationary_image = tk.PhotoImage(file="python.png")
         self.pressed_image = tk.PhotoImage(file="diamond.png")
         self.bomb_image = tk.PhotoImage(file="boom.png")
@@ -60,7 +60,7 @@ class MinesweeperGUI:
             self.points = 0  # Reset points for a new game
             self.update_points_display()
         except ValueError:
-            messagebox.showerror("Error", "Invalid input. Please enter a valid number.LOL")
+            messagebox.showerror("Error", "Invalid input. Please enter a valid number.")
 
     def show_grid(self, disabled=False):
         # Clear grid frame
