@@ -1,6 +1,9 @@
+import os
 import random
 import tkinter as tk
 from tkinter import messagebox
+
+ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
 
 
 class MinesweeperGUI:
@@ -14,9 +17,9 @@ class MinesweeperGUI:
         self.points = 0
         
         # Load The images
-        self.stationary_image = tk.PhotoImage(file="python.png")
-        self.pressed_image = tk.PhotoImage(file="diamond.png")
-        self.bomb_image = tk.PhotoImage(file="boom.png")
+        self.stationary_image = tk.PhotoImage(file=os.path.join(ASSETS, "python.png"))
+        self.pressed_image = tk.PhotoImage(file=os.path.join(ASSETS, "diamond.png"))
+        self.bomb_image = tk.PhotoImage(file=os.path.join(ASSETS, "boom.png"))
         
         self.create_widgets()
 
@@ -31,7 +34,7 @@ class MinesweeperGUI:
         self.entry.pack(side=tk.TOP, pady=10)
 
         # Load the image and create a smaller version
-        self.start_button = tk.PhotoImage(file='start.png')
+        self.start_button = tk.PhotoImage(file=os.path.join(ASSETS, "start.png"))
         self.smaller_image = self.start_button.subsample(2, 2)
 
         # Create the button with the smaller image
